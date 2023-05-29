@@ -69,6 +69,7 @@ print(s1)
 # a in list, a not in list, a in dict.keys(), a in set
 # 비어있는 값들은 거짓, 값이 들어있으면 참
 # [],{},(),0,"",None -> 거짓,
+
 # while 조건 : 
 #     실행문 #조건이 참인 한, 무한 반복
 # for 변수 in 리스트 :

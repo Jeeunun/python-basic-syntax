@@ -137,8 +137,8 @@ for a in range(0,10):
 # for a in 리스트 구문으로는 원본리스트 데이터를 변경할 수 없다. ->  인덱스로 !
 lista = [10,20,30,40,50,60,70,80,90,100]
 lista[5] = 100
-for a in lista:
-    a = 100 #이런 방식으로는 원본의 lista의 값을 변경할 수 없다.
+# for a in lista:
+#     a = 100 #이런 방식으로는 원본의 lista의 값을 변경할 수 없다.
 
 # 직접 리스트의 index로 접근해야지 원본을 바꿀 수 있다. 
 for a in range(len(lista)):

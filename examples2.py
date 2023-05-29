@@ -103,3 +103,17 @@ def solution(participant, completion):
         else:
             answer = p
     return answer
+
+#369게임 (다시 풀어보기)
+def solution(order):
+    answer = 0
+    for a in ['3','6','9']:
+        answer += str(order).count(a)
+    return answer
+
+def solution(order):
+    answer = 0
+    for a in list(str(order)):
+        if a in ['3','6','9'] :
+            answer += 1
+    return answer

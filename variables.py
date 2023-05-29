@@ -149,7 +149,6 @@ print(a)
 # age = int(input("나이가 몇 살이신가요?"))
 # weight = float(input("몸무게가 몇킬로그램 이신가요?"))
 # 로도 가능하다. 
-    # 프로그램 정지 : Ctrl + C
-    # 파이썬 모드 : ctrl + z
+
 
 

@@ -144,7 +144,7 @@ for b in range(0,len(listb)) : #0,1,2,3 값이 들어있다.
     print(listb[b])            #인덱스로 접근함. 
 
 # 연습문제
-# 내가 푼 것
+# 내가 푼 것 -> 틀림
 weight = int(input("짐의 무게는 얼마입니까? : "))
 if weight >= 10 :
     print("수수료는 {}입니다." ,format(10000*(weight//10))) #print("수수료는 %d 입니다. " % 10000*(weight//10))
