@@ -145,6 +145,25 @@ def solution(n):
 n = int(input("숫자를 입력하세요: "))
 answer = solution(n)
 print(answer)
+# -------------
+# <반복문for>
+def factorial(n):
+    output = 1
+    for i in range(1,n+1):
+        output *= i
+    return output
+
+print(factorial(5))
+# <재귀함수로 구현>
+#   -수학의 수열의 점화식 - 이웃한 항의 관계를 통해 수열을 나타내는 것
+#   -팩토리얼 점화식 
+#   n이 2이상의 수일 때 n!= n X (n-1)!
+def factorial(n):
+    if n==1:
+        return 1
+    elif n>=2:
+        return n*factorial(n-1)
+    
 
 # 재귀함수를 통한 factorial 예제
 # 재귀함수란 함수내에서 함수자기자신을 호출하는 방식.
@@ -202,12 +221,35 @@ for a in range(len(lista)-1): #a=0~4
 print(listb)
 
 # # 재귀함수로 표현해보기 : 매개변수로 list와 조합해야할 k개의 숫자가 주어진다. lista의 m개씩의 조합을 구하여 리스트에 담아 출력하여라.
-lista = [10,20,30,40,50]
-listb =[]
-def solution(k):
-    for a in range(len(k)):
-        return solution(k-1)
+count = 0
+for a in range(len(lista)-1): #a=0~4
+    for b in range(a+1,len(lista)): #b=1~4
+         for c in range(b+1,len(lista)): #b=1~4
+            count+=1
+            listb.append([lista[a],lista[b],lista[c]])
+            print(count)
+print(listb) # for문이 무한대가 된다... => 재귀함수
 
+# 재귀함수
+# 조합
+def recur(lista, total_list, temp_list, n, m):
+    if m == 0:
+        total_list.append(temp_list[:]) #값을append하기 위해 [:] 사용.
+        return                          #-----> recur 함수 종료
+    for a in range(n, len(lista)):
+        temp_list.append(lista[a])
+        recur(lista, total_list, temp_list, a+1, m-1)
+        temp_list.pop()                 
+
+
+# 호출
+input1 = [10,20,30,40,50]
+total_list =[]
+input2 = 3
+recur(input1,total_list, [], 0, input2)
+print(len(total_list)) #경우의 수 
+
+# 순열?
 
 
 
