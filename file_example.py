@@ -92,10 +92,10 @@ for dir in dirList:
             if(dirTuple2[1]=='.py'):
                 fullPath = os.path.join(filename, dir2)
                 print(fullPath)
-    # dirTuple = os.path.splitext(dir)
-    # if(dirTuple[1]=='.py'):
-    #     fullPath = os.path.join(searchDir, dir)
-    #     print(fullPath)
+    dirTuple = os.path.splitext(dir)
+    if(dirTuple[1]=='.py'):
+        fullPath = os.path.join(searchDir, dir)
+        print(fullPath)
 
 # searchDir(목록 =dirList) > dirList(목록=dir) => searchDir+dir=filename 
 # filename(목록 = dirList2) > dirList2(목록=dir2) => dir2을 '.'으로 split
@@ -164,3 +164,23 @@ for dir in dirList:
     # C:\Users\한지은\OneDrive\바탕 화면\한지은\python-basic-syntax\variables.py
 
 # 모든 폴더까지 검색 => 재귀함수화.
+
+def searchRecur(searchDir):
+    try:
+        dirList = os.listdir(searchDir)
+        if not dirList:
+            return                      #파일이 없을 때 return(함수 종료)
+        for dir in dirList: 
+            filename = os.path.join(searchDir, dir)                                            
+            if os.path.isdir(filename):
+                searchRecur(filename)
+            dirTuple = os.path.splitext(dir)
+            if(dirTuple[1]=='.py'):
+                fullPath = os.path.join(searchDir, dir)
+            print(fullPath)
+    except Exception:
+        print("예외입니다.")
+
+searchDir = r'C:\Users\한지은\OneDrive\바탕 화면\한지은'
+searchRecur(searchDir)
+
